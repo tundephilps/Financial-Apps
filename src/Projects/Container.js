@@ -13,6 +13,7 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import LaunchIcon from "@mui/icons-material/Launch";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
+import { Link } from "react-router-dom";
 const Container = () => {
   const data = [
     {
@@ -20,7 +21,7 @@ const Container = () => {
       type: "Enterprise App",
       name: "Profit Margin Calculator",
       description:
-        " Build a Profit Margin Calculator with Vite.js + React.js, TypeScript and Tailwind CSS.",
+        "A Profit Margin Calculator that comes with different color themes and Dark Mode.....",
       Applink: "https://profit-margin-calculator-27dc3.web.app/",
       Repo: "https://github.com/tundephilps/Profit-Margin-Calculator",
     },
@@ -118,7 +119,10 @@ const Container = () => {
                         <ListItemIcon>
                           <LoyaltyIcon fontSize="small" />
                         </ListItemIcon>
-                        <ListItemText>Subscribe Full Version</ListItemText>
+                        <Link to="/Pricing">
+                          {" "}
+                          <ListItemText>Subscribe Full Version</ListItemText>
+                        </Link>
                       </MenuItem>
                     </MenuList>
                   </Paper>

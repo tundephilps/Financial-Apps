@@ -4,6 +4,8 @@ import Hero from "./Hero";
 import Feature from "./Feature";
 import Solution from "./Solution";
 import Footer from "./Footer";
+import Nav from "./Navbar";
+import Sponsors from "./Sponsors";
 
 const Homepage = () => {
   return (
@@ -11,6 +13,7 @@ const Homepage = () => {
       <Header />
       <Hero />
       <Feature />
+      <Sponsors />
       <Solution />
       <Footer />
     </>

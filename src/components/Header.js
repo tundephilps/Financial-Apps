@@ -1,5 +1,6 @@
 import { useState } from "react";
 import fintech from "../images/fintech.png";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +16,7 @@ export const Header = () => {
         >
           <img style={{ height: "3.5rem" }} src={fintech} />
         </a>
-        <ul class="flex items-center space-x-8 lg:flex">
+        <ul class="hidden items-center space-x-8 lg:flex">
           <li>
             <a
               href="/"
@@ -28,7 +29,7 @@ export const Header = () => {
           </li>
           <li>
             <a
-              href="/Products"
+              href="/Projects"
               aria-label="Our product"
               title="Our product"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -48,7 +49,7 @@ export const Header = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="/AboutUs"
               aria-label="About us"
               title="About us"
               class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -59,12 +60,15 @@ export const Header = () => {
         </ul>
         <ul class="flex items-center space-x-8 lg:flex">
           <li>
-            <button
-              type="button"
-              class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-            >
-              Sign Up
-            </button>
+            <Link to="/">
+              {" "}
+              <button
+                type="button"
+                class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              >
+                Sign Up
+              </button>
+            </Link>
           </li>
         </ul>
         <div class="lg:hidden">
