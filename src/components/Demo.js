@@ -1,9 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import Feedback from "./Feedback";
 import { Header } from "./Header";
 import Footer from "./Footer";
+import "./Tabs.css";
 
 const Demo = () => {
+  const [toggle, setToggle] = useState(1);
+
+  const [activeButton, setActiveButton] = useState(0);
+
+  function updateToggle(id) {
+    setToggle(id);
+  }
+
   return (
     <>
       <Header />
@@ -22,23 +31,68 @@ const Demo = () => {
           </div>
           <div className="grid grid-cols-5 p-4 md:p-8">
             <div className="flex justify-center px-4 col-span-full md:col-span-1 md:flex-col md:justify-start md:items-start">
-              <button className="p-2 border-b-2 md:border-l-2 md:border-b-0 md:py-3">
+              <button
+                onClick={() => updateToggle(1)}
+                className={
+                  toggle === 1
+                    ? "px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-l-2 border-blue-400 text-blue-500"
+                    : " px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 hover:border-l-2 hover:border-blue-400 hover:text-blue-500"
+                }
+              >
                 Mucius
               </button>
-              <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3">
-                Fabellas
-              </button>
-              <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3">
+
+              <button
+                onClick={() => updateToggle(2)}
+                className={
+                  toggle === 2
+                    ? "px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-l-2 border-blue-400 text-blue-500"
+                    : " px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 hover:border-l-2 hover:border-blue-400 hover:text-blue-500"
+                }
+              >
                 Aperiam
               </button>
-              <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3">
+              <button
+                onClick={() => updateToggle(3)}
+                className={
+                  toggle === 3
+                    ? "px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-l-2 border-blue-400 text-blue-500"
+                    : " px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 hover:border-l-2 hover:border-blue-400 hover:text-blue-500"
+                }
+              >
                 Nonumy
               </button>
-              <button className="px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 ">
+              <button
+                onClick={() => updateToggle(4)}
+                className={
+                  toggle === 4
+                    ? "px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 border-l-2 border-blue-400 text-blue-500"
+                    : " px-2 py-1 border-b-2 md:border-l-2 md:border-b-0 md:py-3 hover:border-l-2 hover:border-blue-400 hover:text-blue-500"
+                }
+              >
                 Propriae
               </button>
             </div>
-            <div className="grid gap-12 py-4 text-center sm:grid-cols-2 col-span-full md:col-span-4 md:text-left">
+            <div className={toggle === 4 ? "flex w-[80vw]" : "hidden"}>
+              <iframe
+                width="900px"
+                height="315"
+                src="https://www.youtube.com/embed/C2Hgh_GNxQ0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div className={toggle === 3 ? "flex" : "hidden"}>Coimg Soon</div>
+            <div className={toggle === 2 ? "flex" : "hidden"}>Coming Soon</div>
+            <div
+              className={
+                toggle === 1
+                  ? "grid gap-12 py-4 text-center sm:grid-cols-2 col-span-full md:col-span-4 md:text-left"
+                  : "hidden"
+              }
+            >
               <div className="flex flex-col items-center justify-center space-y-3 md:justify-start md:items-start">
                 <svg
                   fill="none"
