@@ -44,6 +44,15 @@ const Container = () => {
       Applink: "https://pos-zeta.vercel.app/",
       Repo: "https://github.com/tundephilps/POS-System",
     },
+    {
+      Img: require("../images/stock.png"),
+      type: "Enterprise App",
+      name: "Stock Market Traker",
+      description:
+        "An App that allows users get access to information about each company on the stock market",
+      Applink: "https://stock-app-ecru.vercel.app/",
+      Repo: "https://github.com/tundephilps/Stock-Market-App",
+    },
   ];
 
   const [anchorEl, setAnchorEl] = React.useState(null);
